@@ -5,15 +5,6 @@ Este proyecto consiste en una plataforma web desarrollada con Django que conecta
 ## Integrantes
 * Yudy Mayorga
 
-## Descripción y Funcionalidad
-El sistema permite gestionar de manera integral la contratación de servicios técnicos mediante las siguientes funciones:
-
-* Organizar los servicios por categorías especializadas.
-* Administrar perfiles de proveedores con sus datos de contacto, tarifas e historial.
-* Registrar clientes y agendar solicitudes de servicio.
-* Llevar un control sobre el estado de cada solicitud y su pago correspondiente.
-* Calificar y retroalimentar la calidad del trabajo recibido.
-
 
 ### Pasos de Instalación y Ejecución (Windows)
 
