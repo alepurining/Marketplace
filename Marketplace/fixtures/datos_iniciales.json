@@ -1,0 +1,98 @@
+[
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "001",
+  "fields": {
+    "categoria_name": "Oficial de Construcción",
+    "categoria_description": "Persona encargada de construccion",
+    "categoria_image": ""
+  }
+},
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "002",
+  "fields": {
+    "categoria_name": "Plomero",
+    "categoria_description": "se encarga de instalar, reparar y mantener sistemas de plomería, incluyendo tuberías, grifos, desagües, lavabos, inodoros y otros accesorios relacionados con el suministro y drenaje de agua y gas",
+    "categoria_image": ""
+  }
+},
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "003",
+  "fields": {
+    "categoria_name": "Cerrajero",
+    "categoria_description": "Instalación, mantenimiento y reparación de redes eléctricas, tableros, tomacorrientes y luminarias",
+    "categoria_image": ""
+  }
+},
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "004",
+  "fields": {
+    "categoria_name": "Técnico en refrigeración / climatización",
+    "categoria_description": "Mantenimiento, reparación e instalación de aire acondicionado, refrigeradores y sistemas de calefacción doméstica.",
+    "categoria_image": ""
+  }
+},
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "005",
+  "fields": {
+    "categoria_name": "Electricista residencial",
+    "categoria_description": "Instalación, mantenimiento y reparación de redes eléctricas, tableros, tomacorrientes y luminarias.",
+    "categoria_image": "categoriaservicio/Captura_de_pantalla_2026-11-01_205654.png"
+  }
+},
+{
+  "model": "Marketplace.categoriaservicio",
+  "pk": "006",
+  "fields": {
+    "categoria_name": "Runescape",
+    "categoria_description": "Ejemplo imagen agregada",
+    "categoria_image": "categoriaservicio/Captura_de_pantalla_2026-08-31_101441.png"
+  }
+},
+{
+  "model": "Marketplace.tecnico",
+  "pk": "001",
+  "fields": {
+    "tecnico_name_completo": "Jose Nel Muñoz Ocampo",
+    "tecnico_telefono": "3014642620",
+    "tecnico_email": "munozjose.3008@gmail.com",
+    "tecnico_tarifa_por_hora": "10000.00",
+    "tecnico_experiencia_anos": 2,
+    "tecnico_estado": true,
+    "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-04-14_170410.png",
+    "categoria": "001"
+  }
+},
+{
+  "model": "Marketplace.tecnico",
+  "pk": "002",
+  "fields": {
+    "tecnico_name_completo": "Andres Martinez Valencia",
+    "tecnico_telefono": "3232312456",
+    "tecnico_email": "andres@gmail.com",
+    "tecnico_tarifa_por_hora": "4000.00",
+    "tecnico_experiencia_anos": 2,
+    "tecnico_estado": true,
+    "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-05-10_004557.png",
+    "categoria": "003"
+  }
+},
+{
+  "model": "Marketplace.tecnico",
+  "pk": "003",
+  "fields": {
+    "tecnico_name_completo": "Marcela Jimenez Valencia",
+    "tecnico_telefono": "3104575052",
+    "tecnico_email": "marcela@gmail.com",
+    "tecnico_tarifa_por_hora": "10000.00",
+    "tecnico_experiencia_anos": 1,
+    "tecnico_estado": true,
+    "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-10-24_172304.png",
+    "categoria": "001"
+  }
+}
+]
