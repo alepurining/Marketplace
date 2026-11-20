@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de categoría{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle">
+
+    <h1>Detalle de la categoría</h1>
+
+    <p><strong>ID:</strong> {{ categoria.id }}</p>
+    <p><strong>Nombre:</strong> {{ categoria.categoria_name }}</p>
+    <p><strong>Descripción:</strong> {{ categoria.categoria_description }}</p>
+
+    {% if categoria.categoria_image %}
+
+    <p><strong>Imagen:</strong></p>
+
+    <img src="{{ categoria.categoria_image.url }}" alt="Imagen de {{ categoria.categoria_name }}" width="200" />
+    
+    {% endif %}
+
+    <br><br>
+
+    <a href="{% url 'listacategorias' %}" class="btn-volver">Volver</a>
+    
+</div>
+
+{% endblock %}

@@ -1,25 +1,25 @@
 [
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "001",
+  "pk": 1,
   "fields": {
     "categoria_name": "Oficial de Construcción",
-    "categoria_description": "Persona encargada de construccion",
+    "categoria_description": "Persona encargada de construcción",
     "categoria_image": ""
   }
 },
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "002",
+  "pk": 2,
   "fields": {
     "categoria_name": "Plomero",
-    "categoria_description": "se encarga de instalar, reparar y mantener sistemas de plomería, incluyendo tuberías, grifos, desagües, lavabos, inodoros y otros accesorios relacionados con el suministro y drenaje de agua y gas",
+    "categoria_description": "Se encarga de instalar, reparar y mantener sistemas de plomería, incluyendo tuberías, grifos, desagües, lavabos, inodoros y otros accesorios relacionados con el suministro y drenaje de agua y gas",
     "categoria_image": ""
   }
 },
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "003",
+  "pk": 3,
   "fields": {
     "categoria_name": "Cerrajero",
     "categoria_description": "Instalación, mantenimiento y reparación de redes eléctricas, tableros, tomacorrientes y luminarias",
@@ -28,7 +28,7 @@
 },
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "004",
+  "pk": 4,
   "fields": {
     "categoria_name": "Técnico en refrigeración / climatización",
     "categoria_description": "Mantenimiento, reparación e instalación de aire acondicionado, refrigeradores y sistemas de calefacción doméstica.",
@@ -37,7 +37,7 @@
 },
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "005",
+  "pk": 5,
   "fields": {
     "categoria_name": "Electricista residencial",
     "categoria_description": "Instalación, mantenimiento y reparación de redes eléctricas, tableros, tomacorrientes y luminarias.",
@@ -46,7 +46,7 @@
 },
 {
   "model": "Marketplace.categoriaservicio",
-  "pk": "006",
+  "pk": 6,
   "fields": {
     "categoria_name": "Runescape",
     "categoria_description": "Ejemplo imagen agregada",
@@ -55,7 +55,7 @@
 },
 {
   "model": "Marketplace.tecnico",
-  "pk": "001",
+  "pk": 1,
   "fields": {
     "tecnico_name_completo": "Jose Nel Muñoz Ocampo",
     "tecnico_telefono": "3014642620",
@@ -64,12 +64,12 @@
     "tecnico_experiencia_anos": 2,
     "tecnico_estado": true,
     "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-04-14_170410.png",
-    "categoria": "001"
+    "categoria": 1
   }
 },
 {
   "model": "Marketplace.tecnico",
-  "pk": "002",
+  "pk": 2,
   "fields": {
     "tecnico_name_completo": "Andres Martinez Valencia",
     "tecnico_telefono": "3232312456",
@@ -78,12 +78,12 @@
     "tecnico_experiencia_anos": 2,
     "tecnico_estado": true,
     "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-05-10_004557.png",
-    "categoria": "003"
+    "categoria": 3
   }
 },
 {
   "model": "Marketplace.tecnico",
-  "pk": "003",
+  "pk": 3,
   "fields": {
     "tecnico_name_completo": "Marcela Jimenez Valencia",
     "tecnico_telefono": "3104575052",
@@ -92,7 +92,129 @@
     "tecnico_experiencia_anos": 1,
     "tecnico_estado": true,
     "tecnico_imagen": "tecnico/Captura_de_pantalla_2026-10-24_172304.png",
-    "categoria": "001"
+    "categoria": 1
+  }
+},
+{
+  "model": "Marketplace.cliente",
+  "pk": 1,
+  "fields": {
+    "cliente_name_completo": "Yudy Mayorga",
+    "cliente_telefono": "3232315845",
+    "cliente_email": "yudi@gmail.com",
+    "cliente_direccion_principal": "calle 123",
+    "cliente_imagen": "cliente/IMG_20261003_220225.jpg"
+  }
+},
+{
+  "model": "Marketplace.cliente",
+  "pk": 2,
+  "fields": {
+    "cliente_name_completo": "Alejandro Martinez",
+    "cliente_telefono": "323245323",
+    "cliente_email": "alejo@gmail.com",
+    "cliente_direccion_principal": "calle 54bb #nose",
+    "cliente_imagen": "cliente/IMG_20261003_200836.jpg"
+  }
+},
+{
+  "model": "Marketplace.cliente",
+  "pk": 3,
+  "fields": {
+    "cliente_name_completo": "Jeremias Jonaiber Mosquera",
+    "cliente_telefono": "3102547105",
+    "cliente_email": "jeremias@gmail.com",
+    "cliente_direccion_principal": "venezuela #123",
+    "cliente_imagen": "cliente/RobloxScreenShot20261026_192101069.png"
+  }
+},
+{
+  "model": "Marketplace.cliente",
+  "pk": 4,
+  "fields": {
+    "cliente_name_completo": "Roberto Martinez",
+    "cliente_telefono": "3541030554",
+    "cliente_email": "roberto@gmail.com",
+    "cliente_direccion_principal": "carrera #123",
+    "cliente_imagen": ""
+  }
+},
+{
+  "model": "Marketplace.solicitudservicio",
+  "pk": 1,
+  "fields": {
+    "solicitud_direccion_trabajo": "Calle 64bb",
+    "solicitud_descripcion_trabajo": "Solicita trabajo de runescape",
+    "solicitud_fecha_programada": "2026-11-20",
+    "estado": "pendiente",
+    "solicitud_creado_el": "2026-11-20T00:56:39.695Z",
+    "cliente": 1,
+    "tecnico": 1
+  }
+},
+{
+  "model": "Marketplace.solicitudservicio",
+  "pk": 2,
+  "fields": {
+    "solicitud_direccion_trabajo": "venezuela123454",
+    "solicitud_descripcion_trabajo": "Q me arreglein el baño",
+    "solicitud_fecha_programada": "2026-11-26",
+    "estado": "pendiente",
+    "solicitud_creado_el": "2026-11-20T00:57:01.587Z",
+    "cliente": 3,
+    "tecnico": 3
+  }
+},
+{
+  "model": "Marketplace.pago",
+  "pk": 1,
+  "fields": {
+    "pago_monto": "100000.00",
+    "pago_metodo_pago": "Efectivo",
+    "pago_estado_pago": false,
+    "pago_fecha_pago": "2026-11-20T00:57:16.521Z",
+    "solicitud": 2
+  }
+},
+{
+  "model": "Marketplace.pago",
+  "pk": 2,
+  "fields": {
+    "pago_monto": "400000.00",
+    "pago_metodo_pago": "Nequi",
+    "pago_estado_pago": true,
+    "pago_fecha_pago": "2026-11-20T00:57:26.569Z",
+    "solicitud": 1
+  }
+},
+{
+  "model": "Marketplace.calificacion",
+  "pk": 1,
+  "fields": {
+    "calificacion_puntuacion": 5,
+    "calificacion_comentario": "Exceclente servicio",
+    "calificacion_fecha": "2026-11-20T00:48:53.323Z",
+    "tecnico": 1
+  }
+},
+{
+  "model": "Marketplace.calificacion",
+  "pk": 2,
+  "fields": {
+    "calificacion_puntuacion": 1,
+    "calificacion_comentario": "Pesimo servicio, me dañó la casa",
+    "calificacion_fecha": "2026-11-20T00:49:13.459Z",
+    "tecnico": 2
+  }
+},
+{
+  "model": "Marketplace.calificacion",
+  "pk": 3,
+  "fields": {
+    "calificacion_puntuacion": 3,
+    "calificacion_comentario": "Un trabajo regular, arregló pero dejó desordenada la casa",
+    "calificacion_fecha": "2026-11-20T00:49:36.299Z",
+    "tecnico": 2
   }
 }
 ]

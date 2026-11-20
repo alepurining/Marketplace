@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de categorías de servicio{% endblock %}
+
+{% block content %}
+
+<h1><center>Listado de categorías de servicio</center></h1>
+
+<table class="table table-striped table-hover align-middle">
+  
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for categoria in categorias %}
+
+    <tr>
+      <th scope="row">{{ categoria.id }}</th>
+      <td>{{ categoria.categoria_name }}</td>
+      <td>
+        {% if categoria.categoria_image %}
+        <img src="{{ categoria.categoria_image.url }}" alt="Imagen de {{ categoria.categoria_name }}" width="100"/>
+        {% else %}
+        Sin imagen
+        {% endif %}
+      </td>
+      <td>{{ categoria.categoria_description }}</td>
+      <td>
+        <a href="{% url 'detalle_categoria' categoria.id %}" class="btn-detalle">Ver detalle</a>
+        <a href="#" class="btn-editar">Editar</a>
+        <a href="#" class="btn-eliminar">Eliminar</a>
+      </td>
+
+    </tr>
+
+    {% empty %}
+
+    <tr>
+      <td colspan="5" class="text-center">
+        Todavía no hay categorías registradas.
+      </td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

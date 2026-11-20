@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de solicitud{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle">
+
+  <h1>Detalle de la solicitud de servicio</h1>
+
+  <p><strong>ID:</strong> {{ solicitud.id }}</p>
+  <p><strong>Cliente:</strong> {{ solicitud.cliente.cliente_name_completo }}</p>
+  <p><strong>Técnico asignado:</strong> {% if solicitud.tecnico %}{{ solicitud.tecnico.tecnico_name_completo }}{% else %}Sin asignar{% endif %}</p>
+  <p><strong>Dirección de trabajo:</strong> {{ solicitud.solicitud_direccion_trabajo }}</p>
+  <p><strong>Descripción del trabajo:</strong> {{ solicitud.solicitud_descripcion_trabajo }}</p>
+  <p><strong>Fecha programada:</strong> {{ solicitud.solicitud_fecha_programada }}</p>
+  <p><strong>Estado:</strong> {{ solicitud.estado }}</p>
+  <p><strong>Creado el:</strong> {{ solicitud.solicitud_creado_el }}</p>
+
+  <br>
+
+  <a href="{% url 'listasolicitudes' %}" class="btn-volver">Volver</a>
+  
+</div>
+
+{% endblock %}

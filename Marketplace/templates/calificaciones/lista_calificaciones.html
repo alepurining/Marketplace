@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de calificaciones{% endblock %}
+
+{% block content %}
+
+<h1><center>Listado de calificaciones</center></h1>
+
+<table class="table table-striped table-hover align-middle">
+
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Técnico</th>
+      <th scope="col">Puntuación</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for calificacion in calificaciones %}
+
+    <tr>
+      <th scope="row">{{ calificacion.id }}</th>
+      <td>{{ calificacion.tecnico.tecnico_name_completo }}</td>
+      <td>{{ calificacion.calificacion_puntuacion }} / 5</td>
+      <td>{{ calificacion.calificacion_comentario }}</td>
+      <td>{{ calificacion.calificacion_fecha }}</td>
+      <td>
+        <a href="{% url 'detalle_calificacion' calificacion.id %}" class="btn-detalle">Ver detalle</a>
+        <a href="#" class="btn-editar">Editar</a>
+        <a href="#" class="btn-eliminar">Eliminar</a>
+      </td>
+    </tr>
+
+    {% empty %}
+
+    <tr>
+      <td colspan="6" class="text-center">Todavía no hay calificaciones registradas.</td>
+    </tr>
+
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+{% endblock %}

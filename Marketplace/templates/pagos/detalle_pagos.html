@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de pago{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle">
+
+  <h1>Detalle del pago</h1>
+
+  <p><strong>ID:</strong> {{ pago.id }}</p>
+  <p><strong>Solicitud:</strong> #{{ pago.solicitud.id }} ({{ pago.solicitud.solicitud_descripcion_trabajo }})</p>
+  <p><strong>Cliente:</strong> {{ pago.solicitud.cliente.cliente_name_completo }}</p>
+  <p><strong>Monto:</strong> ${{ pago.pago_monto|floatformat:2 }}</p>
+  <p><strong>Método de pago:</strong> {{ pago.pago_metodo_pago }}</p>
+  <p><strong>Estado del pago:</strong> {% if pago.pago_estado_pago %}Pagado{% else %}Pendiente{% endif %}</p>
+  <p><strong>Fecha de pago:</strong> {{ pago.pago_fecha_pago }}</p>
+
+  <br>
+
+  <a href="{% url 'listapagos' %}" class="btn-volver">Volver</a>
+  
+</div>
+
+{% endblock %}

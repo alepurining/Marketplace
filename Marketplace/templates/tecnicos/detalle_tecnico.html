@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de técnico{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle">
+
+  <h1>Detalle del técnico</h1>
+
+  <p><strong>ID:</strong> {{ tecnico.id }}</p>
+  <p><strong>Nombre completo:</strong> {{ tecnico.tecnico_name_completo }}</p>
+  <p><strong>Teléfono:</strong> {{ tecnico.tecnico_telefono }}</p>
+  <p><strong>Email:</strong> {{ tecnico.tecnico_email|default:"Sin correo" }}</p>
+  <p><strong>Categoría:</strong> {{ tecnico.categoria.categoria_name }}</p>
+  <p><strong>Tarifa por hora:</strong> ${{ tecnico.tecnico_tarifa_por_hora|floatformat:2 }}</p>
+  <p><strong>Años de experiencia:</strong> {{ tecnico.tecnico_experiencia_anos }}</p>
+  <p><strong>Estado:</strong> {% if tecnico.tecnico_estado %}Disponible{% else %}No disponible{% endif %}</p>
+
+  {% if tecnico.tecnico_imagen %}
+
+  <p><strong>Imagen:</strong></p>
+  <img src="{{ tecnico.tecnico_imagen.url }}" alt="Imagen de {{ tecnico.tecnico_name_completo }}" width="200" />
+
+  {% endif %}
+
+  <br><br>
+
+  <a href="{% url 'listatecnicos' %}" class="btn-volver">Volver</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de cliente{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle">
+
+  <h1>Detalle del cliente</h1>
+
+  <p><strong>ID:</strong> {{ cliente.id }}</p>
+  <p><strong>Nombre completo:</strong> {{ cliente.cliente_name_completo }}</p>
+  <p><strong>Teléfono:</strong> {{ cliente.cliente_telefono }}</p>
+  <p><strong>Email:</strong> {{ cliente.cliente_email|default:"Sin correo" }}</p>
+  <p><strong>Dirección principal:</strong> {{ cliente.cliente_direccion_principal }}</p>
+
+  {% if cliente.cliente_imagen %}
+  <p><strong>Imagen:</strong></p>
+  <img src="{{ cliente.cliente_imagen.url }}" alt="Imagen de {{ cliente.cliente_name_completo }}" width="200" class="img-thumbnail"/>
+  {% endif %}
+
+  <br><br>
+
+  <a href="{% url 'listaclientes' %}" class="btn-volver">Volver</a>
+
+</div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,46 +6,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>{% block title %}Gestión de Información Pascual Bravo{% endblock %}</title>
+    <title>{% block title %}Marketplace de Servicios{% endblock %}</title>
+    
+    <style>
+        body {
+            background-color: #eef6fc;
+            color: #1e3a5f;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar-pastel {
+            background-color: #6b9ac4;
+            border-radius: 15px;
+        }
+        .navbar-pastel .nav-link {
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 8px 14px;
+            transition: background-color 0.2s;
+        }
+        .navbar-pastel .nav-link:hover {
+            background-color: #5584b0;
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #184275;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(29, 78, 137, 0.1);
+            border: none;
+        }
+        .table thead th {
+            background-color: #3e75a5; /* Azul fuerte para el encabezado */
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            padding: 14px;
+        }
+        .table tbody td, .table tbody th { /* Color de fondo blanco para las filas */
+            border-color: #dceaf7; /* Color de borde azul claro */
+            padding: 12px 14px;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #e7f4ff; /* Resaltado suave al pasar el mouse */
+        }
+
+
+        .caja-detalle {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(29, 78, 137, 0.1); 
+        }
+        .btn-detalle {
+            background-color: #4a89dc;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-detalle:hover {
+            background-color: #356bb5;
+            color: #ffffff;
+        }
+
+
+        .btn-volver {
+            background-color: #7fa8c9;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-volver:hover {
+            background-color: #638eb0;
+            color: #ffffff;
+        }
+
+
+        .btn-registrar {
+            background-color: #5cb85c;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-registrar:hover {
+            background-color: #4cae4c;
+            color: #ffffff;
+        }
+
+
+        .btn-editar {
+            background-color: #f0ad4e;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-editar:hover {
+            background-color: #ec971f;
+            color: #ffffff;
+        }
+
+
+        .btn-eliminar {
+            background-color: #e06c75;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-eliminar:hover {
+            background-color: #c95861;
+            color: #ffffff;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
 
-        <nav class="navbar md:navbar-expand bg-accent" data-bs-theme="dark">
+        <nav class="navbar md:navbar-expand navbar-pastel shadow-sm px-3" data-bs-theme="dark">
+
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="https://pascualbravo.edu.co/wp-content/uploads/2019/12/cropped-Institucion_Pascual_Bravo_Logo.png" alt="Logo" width="170" height="45" class="d-inline-block align-text-top">
-                 </a>
+                <a class="navbar-brand" href="{% url 'listacategorias' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo" width="55" height="55" class="d-inline-block align-text-top">
+                </a>
+
                 <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDarkDrawer" aria-controls="navbarDarkDrawer" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                 </button>
+
                 <dialog class="drawer drawer-end" tabindex="-1" id="navbarDarkDrawer" aria-labelledby="navbarDarkDrawerLabel">
-                
-                <div class="drawer-body mb-2 md:mb-0">
+
+                    <div class="drawer-body mb-2 md:mb-0">
+
                     <ul class="nav navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Facultades</a>
+                            <a class="nav-link" href="{% url 'listacategorias' %}">Categorías</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Departamentos</a>
+                            <a class="nav-link" href="{% url 'listatecnicos' %}">Técnicos</a>
                         </li>
-
                         <li class="nav-item">
-                            <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
-                            Menu
-                            </button>
-                            <div class="menu">
-                            <a class="menu-item" href="#">Action</a>
-                            <a class="menu-item" href="#">Another action</a>
-                            <hr class="menu-divider">
-                            <a class="menu-item" href="#">Something else here</a>
-                            </div>
+                            <a class="nav-link" href="{% url 'listaclientes' %}">Clientes</a>
                         </li>
-                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'listasolicitudes' %}">Solicitudes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'listapagos' %}">Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'listacalificaciones' %}">Calificaciones</a>
+                        </li>
                     </ul>
-                    
-                </div>
+
+                    </div>
+
                 </dialog>
             </div>
         </nav>
@@ -55,5 +204,6 @@
         {% endblock %}
 
     </div>
+    
 </body>
 </html>
