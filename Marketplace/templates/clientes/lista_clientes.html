@@ -4,7 +4,17 @@
 
 {% block content %}
 
-<h1><center>Listado de clientes</center></h1>
+<h1>
+  <center>Listado de clientes</center>
+</h1>
+
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'registrar_cliente' %}" class="btn-registrar">
+    + Registrar
+  </a>
+</div>
+
+<br>
 
 <table class="table table-striped table-hover align-middle">
 
@@ -27,9 +37,9 @@
       <td>{{ cliente.cliente_direccion_principal }}</td>
       <td>
         {% if cliente.cliente_imagen %}
-          <img src="{{ cliente.cliente_imagen.url }}" alt="Imagen de {{ cliente.cliente_name_completo }}" width="100"/>
+        <img src="{{ cliente.cliente_imagen.url }}" alt="Imagen de {{ cliente.cliente_name_completo }}" width="100" />
         {% else %}
-          Sin imagen
+        Sin imagen
         {% endif %}
       </td>
       <td>
@@ -46,7 +56,7 @@
     </tr>
 
     {% endfor %}
-    
+
   </tbody>
 </table>
 

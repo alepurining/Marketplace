@@ -17,7 +17,7 @@ class Tecnico(models.Model):
     tecnico_tarifa_por_hora = models.DecimalField(max_digits=10, decimal_places=2)
     tecnico_experiencia_anos = models.PositiveIntegerField()
     tecnico_estado = models.BooleanField(default=True)
-    tecnico_imagen = models.ImageField(upload_to='tecnico/', null=True, blank=True)
+    tecnico_imagen = models.ImageField(upload_to='tecnico/', null=False, blank=False)
 
     categoria = models.ForeignKey(CategoriaServicio, on_delete=models.CASCADE) 
 
@@ -31,7 +31,7 @@ class Cliente(models.Model):
     cliente_telefono = models.CharField(max_length=15)
     cliente_email = models.EmailField(null=True)
     cliente_direccion_principal = models.CharField(max_length=200)
-    cliente_imagen = models.ImageField(upload_to='cliente/', null=True, blank=True)
+    cliente_imagen = models.ImageField(upload_to='cliente/', null=False, blank=False)
 
     def __str__(self): 
         return self.cliente_name_completo

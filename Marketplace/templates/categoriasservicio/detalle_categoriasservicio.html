@@ -17,13 +17,13 @@
     <p><strong>Imagen:</strong></p>
 
     <img src="{{ categoria.categoria_image.url }}" alt="Imagen de {{ categoria.categoria_name }}" width="200" />
-    
+
     {% endif %}
 
     <br><br>
 
     <a href="{% url 'listacategorias' %}" class="btn-volver">Volver</a>
-    
+
 </div>
 
 {% endblock %}

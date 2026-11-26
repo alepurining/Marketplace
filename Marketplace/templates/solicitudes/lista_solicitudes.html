@@ -4,7 +4,17 @@
 
 {% block content %}
 
-<h1><center>Listado de solicitudes de servicio</center></h1>
+<h1>
+  <center>Listado de solicitudes de servicio</center>
+</h1>
+
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'registrar_tecnico' %}" class="btn-registrar">
+    + Registrar
+  </a>
+</div>
+
+<br>
 
 <table class="table table-striped table-hover align-middle">
   <thead>
@@ -28,7 +38,19 @@
       <td>{% if solicitud.tecnico %}{{ solicitud.tecnico.tecnico_name_completo }}{% else %}Sin asignar{% endif %}</td>
       <td>{{ solicitud.solicitud_direccion_trabajo }}</td>
       <td>{{ solicitud.solicitud_fecha_programada }}</td>
-      <td>{{ solicitud.estado }}</td>
+      <td>
+        {% if solicitud.estado == 'pendiente' %}
+        Pendiente
+        {% elif solicitud.estado == 'en_proceso' %}
+        En proceso
+        {% elif solicitud.estado == 'completada' %}
+        Completada
+        {% elif solicitud.estado == 'cancelada' %}
+        Cancelada
+        {% else %}
+        {{ solicitud.estado }}
+        {% endif %}
+      </td>
       <td>
         <a href="#" class="btn-editar">Editar</a>
         <a href="#" class="btn-eliminar">Eliminar</a>

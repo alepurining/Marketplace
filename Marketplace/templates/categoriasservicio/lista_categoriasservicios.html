@@ -4,14 +4,20 @@
 
 {% block content %}
 
-<h1><center>Listado de categorías de servicio</center></h1>
+<h1>
+  <center>Listado de categorías de servicio</center>
+</h1>
 
-<a href="{% url 'registrar_categoria' %}" type="button" class="theme-success btn-solid btn-styled">
-            <i class="bi bi-plus-circle"></i> Registrar
-        </a>
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'registrar_categoria' %}" class="btn-registrar">
+    + Registrar
+  </a>
+</div>
+
+<br>
 
 <table class="table table-striped table-hover align-middle">
-  
+
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -29,7 +35,7 @@
       <td>{{ categoria.categoria_name }}</td>
       <td>
         {% if categoria.categoria_image %}
-        <img src="{{ categoria.categoria_image.url }}" alt="Imagen de {{ categoria.categoria_name }}" width="100"/>
+        <img src="{{ categoria.categoria_image.url }}" alt="Imagen de {{ categoria.categoria_name }}" width="100" />
         {% else %}
         Sin imagen
         {% endif %}

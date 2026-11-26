@@ -4,7 +4,17 @@
 
 {% block content %}
 
-<h1><center>Listado de técnicos</center></h1>
+<h1>
+  <center>Listado de técnicos</center>
+</h1>
+
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'registrar_tecnico' %}" class="btn-registrar">
+    + Registrar
+  </a>
+</div>
+
+<br>
 
 <table class="table table-striped table-hover align-middle">
 
@@ -31,16 +41,16 @@
       <td>{{ tecnico.tecnico_experiencia_anos }} años</td>
       <td>
         {% if tecnico.tecnico_estado %}
-         Disponible 
-         {% else %} 
-         No disponible 
-         {% endif %}
+        Disponible
+        {% else %}
+        No disponible
+        {% endif %}
       </td>
       <td>
         {% if tecnico.tecnico_imagen %}
         <img src="{{ tecnico.tecnico_imagen.url }}" alt="Imagen de {{ tecnico.tecnico_name_completo }}" width="100" />
         {% else %}
-        Sin imagen 
+        Sin imagen
         {% endif %}
       </td>
 
@@ -61,7 +71,7 @@
     </tr>
 
     {% endfor %}
-    
+
   </tbody>
 </table>
 

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar Pagos{% endblock %}
+
+{% block content %}
+
+<div class="caja-detalle mx-auto" style="max-width: 600px;">
+
+    <h1>Registrar Pago</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <div class="d-flex justify-content-end gap-2 mt-4">
+            <a href="{% url 'listapagos' %}" class="btn-eliminar">
+                Cancelar
+            </a>
+
+            <button type="submit" class="btn-registrar">
+                Registrar
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
