@@ -11,6 +11,7 @@ urlpatterns = [
     # Categorías
     path('categorias/', views.listacategorias, name='listacategorias'),
     path('categorias/<int:pk>/', views.detalle_categoria, name='detalle_categoria'),
+    path('categorias/registrar/', views.registrar_categoria, name='registrar_categoria'),
 
     # Técnicos
     path('tecnicos/', views.listatecnicos, name='listatecnicos'),
@@ -22,7 +23,6 @@ urlpatterns = [
 
     # Solicitudes
     path('solicitudes/', views.listasolicitudes, name='listasolicitudes'),
-    path('solicitudes/<int:pk>/', views.detalle_solicitud, name='detalle_solicitud'),
 
     # Pagos
     path('pagos/', views.listapagos, name='listapagos'),
@@ -30,7 +30,6 @@ urlpatterns = [
 
     # Calificaciones
     path('calificaciones/', views.listacalificaciones, name='listacalificaciones'),
-    path('calificaciones/<int:pk>/', views.detalle_calificacion, name='detalle_calificacion'),
 ]
 
 if settings.DEBUG:

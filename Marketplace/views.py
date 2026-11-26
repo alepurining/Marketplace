@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import CategoriaServicio, Tecnico, Cliente, SolicitudServicio, Pago, Calificacion
+from .forms import CategoriaServicioForm
 
 # --- CATEGORÍAS DE SERVICIO ---
 def listacategorias(request):
@@ -10,6 +11,18 @@ def detalle_categoria(request, pk):
     categoria = get_object_or_404(CategoriaServicio, pk=pk)
     return render(request, 'categoriasservicio/detalle_categoriasservicio.html', {'categoria': categoria})
 
+# Registrar Categoría de Servicio
+def registrar_categoria(request):
+
+    if request.method == 'POST':
+        form = CategoriaServicioForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('listacategorias')
+    else:
+        form = CategoriaServicioForm()
+    return render(request, 'categoriasservicio/formulario_categoria.html', {'form': form})
 
 # --- TÉCNICOS ---
 def listatecnicos(request):
@@ -36,10 +49,6 @@ def listasolicitudes(request):
     solicitudes = SolicitudServicio.objects.all()
     return render(request, 'solicitudes/lista_solicitudes.html', {'solicitudes': solicitudes})
 
-def detalle_solicitud(request, pk):
-    solicitud = get_object_or_404(SolicitudServicio, pk=pk)
-    return render(request, 'solicitudes/detalle_solicitud.html', {'solicitud': solicitud})
-
 
 # --- PAGOS ---
 def listapagos(request):
@@ -56,6 +65,4 @@ def listacalificaciones(request):
     calificaciones = Calificacion.objects.all()
     return render(request, 'calificaciones/lista_calificaciones.html', {'calificaciones': calificaciones})
 
-def detalle_calificacion(request, pk):
-    calificacion = get_object_or_404(Calificacion, pk=pk)
-    return render(request, 'calificaciones/detalle_calificacion.html', {'calificacion': calificacion})
+

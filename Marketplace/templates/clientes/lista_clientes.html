@@ -12,8 +12,6 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre completo</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Email</th>
       <th scope="col">Dirección principal</th>
       <th scope="col">Imagen</th>
       <th scope="col">Acciones</th>
@@ -26,14 +24,12 @@
     <tr>
       <th scope="row">{{ cliente.id }}</th>
       <td>{{ cliente.cliente_name_completo }}</td>
-      <td>{{ cliente.cliente_telefono }}</td>
-      <td>{{ cliente.cliente_email|default:"Sin correo" }}</td>
       <td>{{ cliente.cliente_direccion_principal }}</td>
       <td>
         {% if cliente.cliente_imagen %}
-        <img src="{{ cliente.cliente_imagen.url }}" alt="Imagen de {{ cliente.cliente_name_completo }}" width="100"/>
+          <img src="{{ cliente.cliente_imagen.url }}" alt="Imagen de {{ cliente.cliente_name_completo }}" width="100"/>
         {% else %}
-        Sin imagen
+          Sin imagen
         {% endif %}
       </td>
       <td>
@@ -46,7 +42,7 @@
     {% empty %}
 
     <tr>
-      <td colspan="7" class="text-center">Todavía no hay clientes registrados.</td>
+      <td colspan="5" class="text-center">Todavía no hay clientes registrados.</td>
     </tr>
 
     {% endfor %}

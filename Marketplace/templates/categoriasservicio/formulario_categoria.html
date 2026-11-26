@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar Categoría de Servicio{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1>Registrar Categoría de Servicio</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">
+            Guardar
+        </button>
+
+        <a href="{% url 'listacategorias' %}" class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

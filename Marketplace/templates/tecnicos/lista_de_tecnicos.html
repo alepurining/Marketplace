@@ -13,8 +13,6 @@
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
       <th scope="col">Categoría</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Tarifa por hora</th>
       <th scope="col">Experiencia</th>
       <th scope="col">Estado</th>
       <th scope="col">Imagen</th>
@@ -30,8 +28,6 @@
       <th scope="row">{{ tecnico.id }}</th>
       <td>{{ tecnico.tecnico_name_completo }}</td>
       <td>{{ tecnico.categoria.categoria_name }}</td>
-      <td>{{ tecnico.tecnico_telefono }}</td>
-      <td>${{ tecnico.tecnico_tarifa_por_hora|floatformat:2 }}</td>
       <td>{{ tecnico.tecnico_experiencia_anos }} años</td>
       <td>
         {% if tecnico.tecnico_estado %}
@@ -59,7 +55,7 @@
     {% empty %}
 
     <tr>
-      <td colspan="9" class="text-center">
+      <td colspan="7" class="text-center">
         Todavía no hay técnicos registrados.
       </td>
     </tr>
